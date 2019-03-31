@@ -1,7 +1,7 @@
 //MQTT Dependencies
 
 var mqtt = require('mqtt');
-var client  = mqtt.connect('mqtt://localhost:1883');
+var client  = mqtt.connect('mqtt://192.168.43.185:1883');
 
 //MongoDB Dependencies
 var MongoClient = require('mongodb').MongoClient;

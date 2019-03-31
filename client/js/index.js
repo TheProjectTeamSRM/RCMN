@@ -58,7 +58,10 @@ function raise_ticket() {
 }
 
 function showMap() {
-    var mymap = L.map('mapid').setView([56.13, -106.34], 13);
+
+
+    var mymap = L.map('mapid').setView([26.20, 91.67], 153);
+
 
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidGVrbmljdXMiLCJhIjoiY2p0NTB5ZXZyMDFqNzQ5bzZ5ZDBodXViYyJ9.SuiIDJWFCq7kPqdXD9i67w', {
@@ -71,58 +74,126 @@ function showMap() {
 
     markers = [
         {
-            "name": "Canada",
+            "name": "Pothole 1",
             "url": "https://en.wikipedia.org/wiki/Canada",
-            "lat": 56.130366,
-            "lng": -106.346771
+            "lat": 26.206915,
+            "lng": 91.675675
         },
         {
-            "name": "Anguilla",
+            "name": "Pothole 2",
             "url": "https://en.wikipedia.org/wiki/Anguilla",
-            "lat": 18.220554,
-            "lng": -63.068615
+            "lat": 26.205043,
+            "lng": 91.674202
         },
         {
-                "name": "Japan",
-                "url": "https://en.wikipedia.org/wiki/Japan",
-                "lat": 36.204824,
-                "lng": 138.252924
+            "name": "Pothole 3",
+            "url": "https://en.wikipedia.org/wiki/Japan",
+            "lat": 26.203734,
+            "lng": 91.673726
+        },
+        {
+            "name": "Pothole 4",
+            "url": "https://en.wikipedia.org/wiki/Japan",
+            "lat": 26.197791,
+            "lng": 91.673098
+        },
+        {
+            "name": "Pothole 5",
+            "url": "https://en.wikipedia.org/wiki/Japan",
+            "lat": 26.196291,
+            "lng": 91.671044
         }
     ];
 
+
+    var myIconr = L.icon({
+        iconUrl: 'https://teknicus.github.io/images/images/pin24r.png',
+        iconRetinaUrl: 'https://teknicus.github.io/images/images/pin48r.png',
+        iconSize: [29, 24],
+        iconAnchor: [9, 21],
+        popupAnchor: [0, -14]
+    });
+
+    var myIcony = L.icon({
+        iconUrl: 'https://teknicus.github.io/images/images/pin24y.png',
+        iconRetinaUrl: 'https://teknicus.github.io/images/images/pin48y.png',
+        iconSize: [29, 24],
+        iconAnchor: [9, 21],
+        popupAnchor: [0, -14]
+    });
+
+    var myIconb = L.icon({
+        iconUrl: 'https://teknicus.github.io/images/images/pin24b.png',
+        iconRetinaUrl: 'https://teknicus.github.io/images/images/pin48b.png',
+        iconSize: [29, 24],
+        iconAnchor: [9, 21],
+        popupAnchor: [0, -14]
+    });
+/*
     for ( var i=0; i < markers.length; ++i )
     {
-        L.marker( [markers[i].lat, markers[i].lng] )
+        L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
             .bindPopup( '<a href="' + markers[i].url + '" target="_blank">' + markers[i].name + '</a>' )
             .addTo( mymap );
     }
-
-
-
+*/
+    L.marker( [markers[0].lat, markers[0].lng], {icon: myIconr} )
+        .bindPopup( '<a href="' + markers[0].url + '" target="_blank">' + markers[0].name + '</a>' )
+        .addTo( mymap );
+    L.marker( [markers[1].lat, markers[1].lng], {icon: myIcony} )
+        .bindPopup( '<a href="' + markers[1].url + '" target="_blank">' + markers[2].name + '</a>' )
+        .addTo( mymap );
+    L.marker( [markers[2].lat, markers[2].lng], {icon: myIcony} )
+        .bindPopup( '<a href="' + markers[2].url + '" target="_blank">' + markers[2].name + '</a>' )
+        .addTo( mymap );
+    L.marker( [markers[3].lat, markers[3].lng], {icon: myIconr} )
+        .bindPopup( '<a href="' + markers[3].url + '" target="_blank">' + markers[3].name + '</a>' )
+        .addTo( mymap );
+    L.marker( [markers[4].lat, markers[4].lng], {icon: myIconb} )
+        .bindPopup( '<a href="' + markers[4].url + '" target="_blank">' + markers[4].name + '</a>' )
+        .addTo( mymap );
 /*
-    var mymap = L.map('mapid').setView([12.823109, 80.041021], 13);
+        for ( var i=0; i < markers.length; ++i )
+        {
+            L.marker( [markers[i].lat, markers[i].lng] )
+                .bindPopup( '<a href="' + markers[i].url + '" target="_blank">' + markers[i].name + '</a>' )
+                .addTo( mymap );
+        }
+        */
+    /*
+    for ( var i=0; i < markers.length; ++i )
+    {
+        L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
+            .bindPopup( '<a href="' + markers[i].url + '" target="_blank">' + markers[i].name + '</a>' )
+            .addTo( mymap );
+    }
+*/
 
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidGVrbmljdXMiLCJhIjoiY2p0NTB5ZXZyMDFqNzQ5bzZ5ZDBodXViYyJ9.SuiIDJWFCq7kPqdXD9i67w', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox.streets'
-    }).addTo(mymap);
+    /*
+        var mymap = L.map('mapid').setView([12.823109, 80.041021], 13);
 
-    var lati = 12.823109;
-    var longi = 80.041021;
 
-    var lati1 = 12.834209;
-    var longi1 = 80.052121;
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidGVrbmljdXMiLCJhIjoiY2p0NTB5ZXZyMDFqNzQ5bzZ5ZDBodXViYyJ9.SuiIDJWFCq7kPqdXD9i67w', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(mymap);
 
-    var lati2 = 12.844309;
-    var longi2 = 80.062221;
-    var marker = L.marker([lati, longi]).addTo(mymap);
-    var marker = L.marker([lati1, longi1]).addTo(mymap);
-    var marker = L.marker([lati2, longi2]).addTo(mymap);
-    */
+        var lati = 12.823109;
+        var longi = 80.041021;
+
+        var lati1 = 12.834209;
+        var longi1 = 80.052121;
+
+        var lati2 = 12.844309;
+        var longi2 = 80.062221;
+        var marker = L.marker([lati, longi]).addTo(mymap);
+        var marker = L.marker([lati1, longi1]).addTo(mymap);
+        var marker = L.marker([lati2, longi2]).addTo(mymap);
+        */
 }
 
 function findAlerts() {
@@ -150,7 +221,7 @@ function findAlerts() {
                         //for(i=0, i<data.length(), ++i) {
                         var datadump = JSON.stringify(data[i]);
                         console.log(datadump);var a = list_id.toString();
-                        var trim_msg = datadump.substring(35, 90);
+                        var trim_msg = datadump.substring(35, 97);
 
                         x = 'list_item_' + a;
                         y = 'list_btn_' + a;
